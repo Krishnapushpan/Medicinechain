@@ -1,0 +1,191 @@
+{
+  "allcas": [
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca1.manufacturer.medicine.com",
+      "mspid": "manufacturer-medicine-com",
+      "name": "ca1",
+      "oport": "8000",
+      "org": "manufacturer.medicine.com",
+      "port": "7000",
+      "portmap": "-p 7000:7054 -p 8000:9443",
+      "type": "ca",
+      "url": "192.168.43.197"
+    },
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca1.dealer.medicine.com",
+      "mspid": "dealer-medicine-com",
+      "name": "ca1",
+      "oport": "8001",
+      "org": "dealer.medicine.com",
+      "port": "7001",
+      "portmap": "-p 7001:7054 -p 8001:9443",
+      "type": "ca",
+      "url": "192.168.43.197"
+    },
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca1.shop.medicine.com",
+      "mspid": "shop-medicine-com",
+      "name": "ca1",
+      "oport": "8002",
+      "org": "shop.medicine.com",
+      "port": "7002",
+      "portmap": "-p 7002:7054 -p 8002:9443",
+      "type": "ca",
+      "url": "192.168.43.197"
+    }
+  ],
+  "allcouchdbs": [
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.manufacturer.medicine.com.couchdb",
+      "mspid": "manufacturer-medicine-com",
+      "name": "peer1.couchdb",
+      "org": "manufacturer.medicine.com",
+      "port": "7006",
+      "portmap": "-p 7006:5984",
+      "type": "couchdb",
+      "url": "192.168.43.197"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.dealer.medicine.com.couchdb",
+      "mspid": "dealer-medicine-com",
+      "name": "peer1.couchdb",
+      "org": "dealer.medicine.com",
+      "port": "7007",
+      "portmap": "-p 7007:5984",
+      "type": "couchdb",
+      "url": "192.168.43.197"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.shop.medicine.com.couchdb",
+      "mspid": "shop-medicine-com",
+      "name": "peer1.couchdb",
+      "org": "shop.medicine.com",
+      "port": "7008",
+      "portmap": "-p 7008:5984",
+      "type": "couchdb",
+      "url": "192.168.43.197"
+    }
+  ],
+  "allorderers": [
+    {
+      "fullname": "orderer1.medicine.com",
+      "mspid": "medicine-com",
+      "name": "orderer1",
+      "oport": "8009",
+      "org": "medicine.com",
+      "port": "7009",
+      "portmap": "-p 7009:7050 -p 8009:7060",
+      "type": "orderer",
+      "url": "192.168.43.197"
+    },
+    {
+      "fullname": "orderer2.medicine.com",
+      "mspid": "medicine-com",
+      "name": "orderer2",
+      "oport": "8010",
+      "org": "medicine.com",
+      "port": "7010",
+      "portmap": "-p 7010:7050 -p 8010:7060",
+      "type": "orderer",
+      "url": "192.168.43.197"
+    },
+    {
+      "fullname": "orderer3.medicine.com",
+      "mspid": "medicine-com",
+      "name": "orderer3",
+      "oport": "8011",
+      "org": "medicine.com",
+      "port": "7011",
+      "portmap": "-p 7011:7050 -p 8011:7060",
+      "type": "orderer",
+      "url": "192.168.43.197"
+    }
+  ],
+  "allorgs": [
+    "dealer.medicine.com",
+    "manufacturer.medicine.com",
+    "medicine.com",
+    "shop.medicine.com"
+  ],
+  "allpeers": [
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.manufacturer.medicine.com",
+      "mspid": "manufacturer-medicine-com",
+      "name": "peer1",
+      "oport": "8003",
+      "org": "manufacturer.medicine.com",
+      "port": "7003",
+      "portmap": "-p 7003:7051 -p 8003:7061",
+      "type": "peer",
+      "url": "192.168.43.197"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.dealer.medicine.com",
+      "mspid": "dealer-medicine-com",
+      "name": "peer1",
+      "oport": "8004",
+      "org": "dealer.medicine.com",
+      "port": "7004",
+      "portmap": "-p 7004:7051 -p 8004:7061",
+      "type": "peer",
+      "url": "192.168.43.197"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.shop.medicine.com",
+      "mspid": "shop-medicine-com",
+      "name": "peer1",
+      "oport": "8005",
+      "org": "shop.medicine.com",
+      "port": "7005",
+      "portmap": "-p 7005:7051 -p 8005:7061",
+      "type": "peer",
+      "url": "192.168.43.197"
+    }
+  ],
+  "caorgs": [
+    "dealer.medicine.com",
+    "manufacturer.medicine.com",
+    "shop.medicine.com"
+  ],
+  "console_port": "7015",
+  "explorer_port": "7013",
+  "ordererorgs": [
+    "medicine.com"
+  ],
+  "orgattrs": {
+    "dealer.medicine.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "dealer-medicine-com"
+    },
+    "manufacturer.medicine.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "manufacturer-medicine-com"
+    },
+    "medicine.com": {
+      "certpath": "ordererOrganizations",
+      "mspid": "medicine-com"
+    },
+    "shop.medicine.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "shop-medicine-com"
+    }
+  },
+  "peerorgs": [
+    "dealer.medicine.com",
+    "manufacturer.medicine.com",
+    "shop.medicine.com"
+  ],
+  "portainer_port": "7014"
+}

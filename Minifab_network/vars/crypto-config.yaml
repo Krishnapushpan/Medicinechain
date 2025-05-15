@@ -1,0 +1,58 @@
+---
+OrdererOrgs:
+  - Name: medicine.com
+    Domain: medicine.com
+    Specs:
+      - Hostname: orderer1
+        SANS:
+          - 192.168.43.197
+      - Hostname: orderer2
+        SANS:
+          - 192.168.43.197
+      - Hostname: orderer3
+        SANS:
+          - 192.168.43.197
+
+PeerOrgs:
+  - Name: dealer.medicine.com
+    Domain: dealer.medicine.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca1
+      CommonName: ca1.dealer.medicine.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer1
+        CommonName: peer1.dealer.medicine.com
+        SANS:
+          - 192.168.43.197
+  - Name: manufacturer.medicine.com
+    Domain: manufacturer.medicine.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca1
+      CommonName: ca1.manufacturer.medicine.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer1
+        CommonName: peer1.manufacturer.medicine.com
+        SANS:
+          - 192.168.43.197
+  - Name: shop.medicine.com
+    Domain: shop.medicine.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca1
+      CommonName: ca1.shop.medicine.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer1
+        CommonName: peer1.shop.medicine.com
+        SANS:
+          - 192.168.43.197

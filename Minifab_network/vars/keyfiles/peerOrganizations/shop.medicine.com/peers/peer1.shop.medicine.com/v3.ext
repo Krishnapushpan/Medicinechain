@@ -1,0 +1,4 @@
+keyUsage = critical,digitalSignature
+basicConstraints = critical,CA:FALSE
+subjectAltName=IP: 192.168.43.197,DNS:peer1.shop.medicine.com,DNS:peer1-shop-medicine-com,DNS:localhost,IP:127.0.0.1
+authorityKeyIdentifier = keyid,issuer

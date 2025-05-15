@@ -1,0 +1,203 @@
+---
+Organizations:
+  - &dealer-medicine-com
+      Name: dealer-medicine-com
+      ID: dealer-medicine-com
+      MSPDir: keyfiles/peerOrganizations/dealer.medicine.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('dealer-medicine-com.admin', 'dealer-medicine-com.peer', 'dealer-medicine-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('dealer-medicine-com.admin', 'dealer-medicine-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('dealer-medicine-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('dealer-medicine-com.peer')"
+
+      AnchorPeers:
+      - Host: 192.168.43.197
+        Port: 7004
+  - &manufacturer-medicine-com
+      Name: manufacturer-medicine-com
+      ID: manufacturer-medicine-com
+      MSPDir: keyfiles/peerOrganizations/manufacturer.medicine.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('manufacturer-medicine-com.admin', 'manufacturer-medicine-com.peer', 'manufacturer-medicine-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('manufacturer-medicine-com.admin', 'manufacturer-medicine-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('manufacturer-medicine-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('manufacturer-medicine-com.peer')"
+
+      AnchorPeers:
+      - Host: 192.168.43.197
+        Port: 7003
+  - &medicine-com
+      Name: medicine-com
+      ID: medicine-com
+      MSPDir: keyfiles/ordererOrganizations/medicine.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('medicine-com.member')"
+        Writers:
+          Type: Signature
+          Rule: "OR('medicine-com.member')"
+        Admins:
+          Type: Signature
+          Rule: "OR('medicine-com.admin')"
+  - &shop-medicine-com
+      Name: shop-medicine-com
+      ID: shop-medicine-com
+      MSPDir: keyfiles/peerOrganizations/shop.medicine.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('shop-medicine-com.admin', 'shop-medicine-com.peer', 'shop-medicine-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('shop-medicine-com.admin', 'shop-medicine-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('shop-medicine-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('shop-medicine-com.peer')"
+
+      AnchorPeers:
+      - Host: 192.168.43.197
+        Port: 7005
+
+Capabilities:
+  Channel: &ChannelCapabilities
+    V2_0: true
+
+  Orderer: &OrdererCapabilities
+    V2_0: true
+
+  Application: &ApplicationCapabilities
+    V2_0: true
+
+Application: &ApplicationDefaults
+  Organizations:
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+    LifecycleEndorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+    Endorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+
+  Capabilities:
+    <<: *ApplicationCapabilities
+
+Orderer: &OrdererDefaults
+  OrdererType: etcdraft
+
+  BatchTimeout: 2s
+
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+
+  Addresses:
+  - 192.168.43.197:7009
+  - 192.168.43.197:7010
+  - 192.168.43.197:7011
+  EtcdRaft:
+    Consenters:
+    - Host: 192.168.43.197
+      Port: 7009
+      ClientTLSCert: keyfiles/ordererOrganizations/medicine.com/orderers/orderer1.medicine.com/tls/server.crt
+      ServerTLSCert: keyfiles/ordererOrganizations/medicine.com/orderers/orderer1.medicine.com/tls/server.crt
+    - Host: 192.168.43.197
+      Port: 7010
+      ClientTLSCert: keyfiles/ordererOrganizations/medicine.com/orderers/orderer2.medicine.com/tls/server.crt
+      ServerTLSCert: keyfiles/ordererOrganizations/medicine.com/orderers/orderer2.medicine.com/tls/server.crt
+    - Host: 192.168.43.197
+      Port: 7011
+      ClientTLSCert: keyfiles/ordererOrganizations/medicine.com/orderers/orderer3.medicine.com/tls/server.crt
+      ServerTLSCert: keyfiles/ordererOrganizations/medicine.com/orderers/orderer3.medicine.com/tls/server.crt
+  Organizations:
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+    BlockValidation:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+
+Channel: &ChannelDefaults
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+
+  Capabilities:
+    <<: *ChannelCapabilities
+
+Profiles:
+  OrgChannel:
+    Consortium: SampleConsortium
+    <<: *ChannelDefaults
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+      - *dealer-medicine-com
+      - *manufacturer-medicine-com
+      - *shop-medicine-com
+      Capabilities:
+        <<: *ApplicationCapabilities
+
+  OrdererGenesis:
+    <<: *ChannelDefaults
+    Capabilities:
+      <<: *ChannelCapabilities
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+      - *medicine-com
+      Capabilities:
+        <<: *OrdererCapabilities
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+      - <<: *medicine-com
+    Consortiums:
+      SampleConsortium:
+        Organizations:
+        - *dealer-medicine-com
+        - *manufacturer-medicine-com
+        - *shop-medicine-com

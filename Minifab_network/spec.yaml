@@ -1,0 +1,20 @@
+fabric:
+  cas:
+  - "ca1.manufacturer.medicine.com"
+  - "ca1.dealer.medicine.com"
+  - "ca1.shop.medicine.com"
+  peers: 
+  - "peer1.manufacturer.medicine.com"
+  - "peer1.dealer.medicine.com"
+  - "peer1.shop.medicine.com"
+  orderers:
+  - "orderer1.medicine.com"
+  - "orderer2.medicine.com"
+  - "orderer3.medicine.com"
+  settings:
+    ca:
+      FABRIC_LOGGING_SPEC: DEBUG
+    peer:
+      FABRIC_LOGGING_SPEC: DEBUG
+    orderer:
+      FABRIC_LOGGING_SPEC: DEBUG

@@ -1,0 +1,128 @@
+{
+  "Admin@dealer.medicine.com": {
+    "key": "Admin@dealer.medicine.com",
+    "org": "dealer.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/dealer.medicine.com/users/Admin@dealer.medicine.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/dealer.medicine.com/users/Admin@dealer.medicine.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@manufacturer.medicine.com": {
+    "key": "Admin@manufacturer.medicine.com",
+    "org": "manufacturer.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/manufacturer.medicine.com/users/Admin@manufacturer.medicine.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/manufacturer.medicine.com/users/Admin@manufacturer.medicine.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@medicine.com": {
+    "key": "Admin@medicine.com",
+    "org": "medicine.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/medicine.com/users/Admin@medicine.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/medicine.com/users/Admin@medicine.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@shop.medicine.com": {
+    "key": "Admin@shop.medicine.com",
+    "org": "shop.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/shop.medicine.com/users/Admin@shop.medicine.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/shop.medicine.com/users/Admin@shop.medicine.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "dealer.medicine.com": {
+    "key": "dealer.medicine.com",
+    "org": "dealer.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/dealer.medicine.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/dealer.medicine.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "dealer.medicine.com.tlsca": {
+    "key": "dealer.medicine.com",
+    "org": "dealer.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/dealer.medicine.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/dealer.medicine.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "manufacturer.medicine.com": {
+    "key": "manufacturer.medicine.com",
+    "org": "manufacturer.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/manufacturer.medicine.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/manufacturer.medicine.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "manufacturer.medicine.com.tlsca": {
+    "key": "manufacturer.medicine.com",
+    "org": "manufacturer.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/manufacturer.medicine.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/manufacturer.medicine.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "medicine.com": {
+    "key": "medicine.com",
+    "org": "medicine.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/medicine.com/ca/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/medicine.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "medicine.com.tlsca": {
+    "key": "medicine.com",
+    "org": "medicine.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/medicine.com/tlsca/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/medicine.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "orderer1.medicine.com": {
+    "key": "orderer1.medicine.com",
+    "org": "medicine.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/medicine.com/orderers/orderer1.medicine.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/medicine.com/orderers/orderer1.medicine.com/msp/keystore/priv_sk",
+    "type": "orderers"
+  },
+  "orderer2.medicine.com": {
+    "key": "orderer2.medicine.com",
+    "org": "medicine.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/medicine.com/orderers/orderer2.medicine.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/medicine.com/orderers/orderer2.medicine.com/msp/keystore/priv_sk",
+    "type": "orderers"
+  },
+  "orderer3.medicine.com": {
+    "key": "orderer3.medicine.com",
+    "org": "medicine.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/medicine.com/orderers/orderer3.medicine.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/medicine.com/orderers/orderer3.medicine.com/msp/keystore/priv_sk",
+    "type": "orderers"
+  },
+  "peer1.dealer.medicine.com": {
+    "key": "peer1.dealer.medicine.com",
+    "org": "dealer.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/dealer.medicine.com/peers/peer1.dealer.medicine.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/dealer.medicine.com/peers/peer1.dealer.medicine.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer1.manufacturer.medicine.com": {
+    "key": "peer1.manufacturer.medicine.com",
+    "org": "manufacturer.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/manufacturer.medicine.com/peers/peer1.manufacturer.medicine.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/manufacturer.medicine.com/peers/peer1.manufacturer.medicine.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer1.shop.medicine.com": {
+    "key": "peer1.shop.medicine.com",
+    "org": "shop.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/shop.medicine.com/peers/peer1.shop.medicine.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/shop.medicine.com/peers/peer1.shop.medicine.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "shop.medicine.com": {
+    "key": "shop.medicine.com",
+    "org": "shop.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/shop.medicine.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/shop.medicine.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "shop.medicine.com.tlsca": {
+    "key": "shop.medicine.com",
+    "org": "shop.medicine.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/shop.medicine.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/shop.medicine.com/tlsca/priv_sk",
+    "type": "tlsca"
+  }
+}
